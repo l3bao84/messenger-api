@@ -73,7 +73,7 @@ public class MessengerWebhookController {
 
     private void handleTextMessageEvent(TextMessageEvent event) throws MessengerApiException, MessengerIOException {
         final String senderId = event.senderId();
-        sendTextMessage(senderId, "Xin chào! Đây là chatbot được tạo từ ứng dụng Spring Boot");
+        sendTextMessage(senderId, "Hi thằng cha m, oánh chết cha bây giờ");
 
     }
 
