@@ -131,11 +131,11 @@ public class MessengerWebhookController {
 
         try {
             switch (messageText.toLowerCase()) {
-                case "user":
+                case "user": //F
                     sendUserDetails(senderId);
                     break;
 
-                case "image":
+                case "image": //F
                     sendImageMessage(senderId);
                     break;
 
@@ -143,11 +143,11 @@ public class MessengerWebhookController {
                     sendGifMessage(senderId);
                     break;
 
-                case "audio":
+                case "audio": //F
                     sendAudioMessage(senderId);
                     break;
 
-                case "video":
+                case "video": //F
                     sendVideoMessage(senderId);
                     break;
 
@@ -163,7 +163,7 @@ public class MessengerWebhookController {
                     sendGenericMessage(senderId);
                     break;
 
-                case "list":
+                case "list": //F
                     sendListMessageMessage(senderId);
                     break;
 
@@ -171,19 +171,19 @@ public class MessengerWebhookController {
                     sendReceiptMessage(senderId);
                     break;
 
-                case "quick reply":
+                case "quick reply": //F
                     sendQuickReply(senderId);
                     break;
 
-                case "read receipt":
+                case "read receipt": //F
                     sendReadReceipt(senderId);
                     break;
 
-                case "typing on":
+                case "typing on": //F
                     sendTypingOn(senderId);
                     break;
 
-                case "typing off":
+                case "typing off": //F
                     sendTypingOff(senderId);
                     break;
 
@@ -206,7 +206,7 @@ public class MessengerWebhookController {
     }
 
     private void sendImageMessage(String recipientId) throws MessengerApiException, MessengerIOException, MalformedURLException {
-        final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(IMAGE, new URL("https://www.pinterest.com/pin/33073378504739037/"));
+        final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(IMAGE, new URL("https://i.pinimg.com/originals/be/b6/ad/beb6adafaeb1b1972093c8ae6f4314c8.jpg"));
         sendRichMediaMessage(recipientId, richMediaAsset);
     }
 
