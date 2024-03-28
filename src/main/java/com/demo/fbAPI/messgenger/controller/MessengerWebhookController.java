@@ -135,7 +135,7 @@ public class MessengerWebhookController {
                     sendUserDetails(senderId);
                     break;
 
-                case "image": //F
+                case "image":
                     sendImageMessage(senderId);
                     break;
 
@@ -201,7 +201,7 @@ public class MessengerWebhookController {
 
     private void sendUserDetails(String recipientId) throws MessengerApiException, MessengerIOException {
         final UserProfile userProfile = this.messenger.queryUserProfile(recipientId);
-        sendTextMessage(recipientId, String.format("Your name is %s and you are %s", userProfile.firstName(), userProfile.gender()));
+        sendTextMessage(recipientId, String.format("Your name is " + userProfile.firstName() + " and you are " + userProfile.gender()));
         logger.info("User Profile Picture: {}", userProfile.profilePicture());
     }
 
@@ -222,7 +222,8 @@ public class MessengerWebhookController {
     }
 
     private void sendAudioMessage(String recipientId) throws MessengerApiException, MessengerIOException, MalformedURLException {
-        final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(AUDIO, new URL("https://record.reverb.chat/s/ojm91KqulYwdF7374rda"));
+        //final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(AUDIO, new URL("https://record.reverb.chat/s/ojm91KqulYwdF7374rda"));
+        final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(AUDIO, new URL("https://raw.githubusercontent.com/fbsamples/messenger-platform-samples/master/node/public/assets/sample.mp3"));
         sendRichMediaMessage(recipientId, richMediaAsset);
     }
 
