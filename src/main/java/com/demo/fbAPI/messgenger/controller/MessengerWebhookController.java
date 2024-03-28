@@ -143,7 +143,7 @@ public class MessengerWebhookController {
                     sendGifMessage(senderId);
                     break;
 
-                case "audio": //F
+                case "audio":
                     sendAudioMessage(senderId);
                     break;
 
@@ -222,13 +222,12 @@ public class MessengerWebhookController {
     }
 
     private void sendAudioMessage(String recipientId) throws MessengerApiException, MessengerIOException, MalformedURLException {
-        //final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(AUDIO, new URL("https://record.reverb.chat/s/ojm91KqulYwdF7374rda"));
         final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(AUDIO, new URL("https://raw.githubusercontent.com/fbsamples/messenger-platform-samples/master/node/public/assets/sample.mp3"));
         sendRichMediaMessage(recipientId, richMediaAsset);
     }
 
     private void sendVideoMessage(String recipientId) throws MessengerApiException, MessengerIOException, MalformedURLException {
-        final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(VIDEO, new URL("https://drive.google.com/file/d/1NUPNC14IfBzM6W_stCHeT7TzybdIQGN3/view?usp=sharing"));
+        final UrlRichMediaAsset richMediaAsset = UrlRichMediaAsset.create(VIDEO, new URL("https://drive.usercontent.google.com/uc?id=1NUPNC14IfBzM6W_stCHeT7TzybdIQGN3&export=download"));
         sendRichMediaMessage(recipientId, richMediaAsset);
     }
 
